@@ -1,6 +1,6 @@
 # Mohammad Mohid - Portfolio Website
 
-Live at: [mohid]((https://portfolio-mohammad-mohid-03.vercel.app/))
+Live at: [mohid](https://portfolio-mohammad-mohid-03.vercel.app/)
 
 ## Deployment Guide
 
