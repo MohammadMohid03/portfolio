@@ -14,12 +14,12 @@
         }
         
         :root {
-            --primary: #00ff88;
-            --secondary: #0066ff;
-            --accent: #ff0066;
-            --dark: #0a0a0f;
-            --darker: #050508;
-            --light: #ffffff;
+            --primary: #0284c7; /* deep blue */
+            --secondary: #0d9488; /* teal */
+            --accent: #334155; /* slate gray */
+            --dark: #f8fafc;
+            --darker: #f1f5f9;
+            --light: #0f172a;
         }
         
         body {
@@ -27,33 +27,8 @@
             background: var(--dark);
             color: var(--light);
             overflow-x: hidden;
-            cursor: none;
         }
-        
-        /* Custom Cursor */
-        .custom-cursor {
-            position: fixed;
-            width: 20px;
-            height: 20px;
-            background: radial-gradient(circle, var(--primary) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 10000;
-            mix-blend-mode: difference;
-            transition: transform 0.1s ease;
-        }
-        
-        .cursor-trail {
-            position: fixed;
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: 9999;
-            opacity: 0.7;
-        }
-        
+
         /* Particle Background */
         .particles {
             position: fixed;
@@ -67,11 +42,12 @@
         
         .particle {
             position: absolute;
-            width: 2px;
-            height: 2px;
-            background: var(--primary);
+            width: 15px;
+            height: 15px;
+            background: linear-gradient(45deg, rgba(2, 132, 199, 0.2), rgba(13, 148, 136, 0.2));
             border-radius: 50%;
-            animation: float 6s infinite ease-in-out;
+            filter: blur(2px);
+            animation: float 15s infinite ease-in-out;
         }
         
         @keyframes float {
@@ -91,11 +67,11 @@
             top: 2rem;
             right: 2rem;
             z-index: 1000;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.8);
             backdrop-filter: blur(20px);
             padding: 1rem;
             border-radius: 50px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         nav ul {
@@ -117,7 +93,7 @@
         nav a:hover {
             color: var(--primary);
             transform: scale(1.1);
-            background: rgba(0, 255, 136, 0.1);
+            background: rgba(2, 132, 199, 0.1);
         }
         
         nav a::before {
@@ -143,7 +119,7 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            background: radial-gradient(ellipse at center, rgba(0, 102, 255, 0.1) 0%, var(--dark) 50%);
+            background: radial-gradient(ellipse at center, rgba(2, 132, 199, 0.08) 0%, var(--dark) 50%);
         }
         
         .hero-content {
@@ -217,7 +193,7 @@
         
         .cta-button:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.3);
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.2);
         }
         
         .cta-button:hover::before {
@@ -312,7 +288,7 @@
         
         /* About Section */
         .about {
-            background: linear-gradient(135deg, rgba(0, 255, 136, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%);
         }
         
         .about-content {
@@ -391,10 +367,10 @@
         }
         
         .skill-category {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.03);
             border-radius: 20px;
             padding: 2rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -425,7 +401,7 @@
         
         .skill-category:hover {
             transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.2);
+            box-shadow: 0 20px 40px rgba(2, 132, 199, 0.15);
         }
         
         .skill-category h3 {
@@ -441,7 +417,7 @@
             align-items: center;
             margin-bottom: 1rem;
             padding: 0.5rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
         }
         
         .skill-bar {
@@ -467,7 +443,21 @@
         
         /* Projects Section */
         .projects {
-            background: linear-gradient(135deg, rgba(255, 0, 102, 0.05) 0%, rgba(0, 102, 255, 0.05) 100%);
+            background: linear-gradient(135deg, rgba(13, 148, 136, 0.05) 0%, rgba(2, 132, 199, 0.05) 100%);
+        }
+        
+        .projects-category {
+            margin-top: 4rem;
+        }
+        
+        .category-title {
+            font-family: 'Orbitron', monospace;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 1rem;
         }
         
         .projects-grid {
@@ -478,39 +468,60 @@
         }
         
         .project-card {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(0, 0, 0, 0.02);
             border-radius: 20px;
             padding: 0;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: all 0.5s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             position: relative;
             overflow: hidden;
             transform-style: preserve-3d;
+            backdrop-filter: blur(10px);
         }
         
         .project-card:hover {
-            transform: rotateY(10deg) rotateX(10deg) translateY(-20px);
-            box-shadow: 0 30px 60px rgba(0, 255, 136, 0.3);
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(2, 132, 199, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 255, 136, 0.15), 0 0 20px rgba(2, 132, 199, 0.1) inset;
         }
         
-        .project-image {
-            height: 200px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary), var(--accent));
+        
+        .project-visual {
+            height: 160px;
+            background: linear-gradient(45deg, rgba(2, 132, 199, 0.1), rgba(13, 148, 136, 0.1));
             position: relative;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-bottom: 1px solid rgba(0,0,0,0.05);
         }
         
-        .project-image::before {
+        .project-visual::after {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: conic-gradient(from 0deg, transparent, rgba(2, 132, 199, 0.2), transparent);
+            animation: spin 8s linear infinite;
+        }
+
+        .project-visual::before {
             content: '</>';
             position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-size: 3rem;
+            z-index: 1;
+            font-size: 2.5rem;
             font-family: 'Orbitron', monospace;
-            color: var(--dark);
+            color: var(--primary);
             font-weight: 900;
+            opacity: 0.8;
+            text-shadow: 0 0 20px rgba(2, 132, 199, 0.5);
         }
+        
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+
         
         .project-content {
             padding: 2rem;
@@ -537,7 +548,7 @@
         }
         
         .tech-tag {
-            background: rgba(0, 255, 136, 0.2);
+            background: rgba(2, 132, 199, 0.15);
             color: var(--primary);
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
@@ -573,7 +584,7 @@
         
         .github-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(255, 0, 102, 0.3);
+            box-shadow: 0 10px 20px rgba(13, 148, 136, 0.2);
         }
         
         .github-btn:hover::before {
@@ -603,166 +614,50 @@
         .contact-item {
             display: flex;
             align-items: center;
-            gap: 1rem;
+            gap: 1.5rem;
             margin-bottom: 2rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 15px;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
         
         .contact-item:hover {
             transform: translateX(10px);
-            background: rgba(0, 255, 136, 0.1);
         }
 
         .contact-link {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            padding: 0.75rem 1.25rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            border-radius: 50px;
+            color: var(--primary);
             text-decoration: none;
-            font-weight: 800;
-            box-shadow: 0 8px 20px rgba(0,255,136,0.08);
-            transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+            font-weight: 600;
+            transition: color 0.2s ease, transform 0.2s ease;
         }
         .contact-link:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 18px 36px rgba(0,255,136,0.14);
-            opacity: 0.98;
-        }
-        .contact-link:focus {
-            outline: 3px solid rgba(0,255,136,0.12);
-            outline-offset: 4px;
+            color: var(--secondary);
+            transform: translateX(4px);
         }
         
         .contact-icon {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.2rem;
-            color: var(--dark);
-        }
-        
-        .contact-form {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
             color: var(--primary);
-            font-weight: 600;
         }
         
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            color: var(--light);
-            font-family: inherit;
-            transition: all 0.3s ease;
-        }
         
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-            box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
-        }
         
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            background: linear-gradient(45deg, var(--primary), var(--secondary));
-            color: var(--dark);
-            border: none;
-            border-radius: 25px;
-            font-size: 1rem;
-            font-weight: 700;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
         
-        .submit-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 30px rgba(0, 255, 136, 0.4);
-        }
-
-        /* Contact visual animation */
-        .contact-visual {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 1.5rem;
-            padding: 2rem;
-        }
-
-        .animation-cards {
-            display: flex;
-            gap: 1.25rem;
-            align-items: center;
-        }
-
-        .anim-card {
-            width: 120px;
-            height: 120px;
-            border-radius: 20px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.2rem;
-            transition: transform 0.4s cubic-bezier(.2,.9,.3,1), box-shadow 0.3s ease;
-            cursor: default;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
-            transform-origin: center;
-        }
-
-        .anim-card:focus,
-        .anim-card:hover {
-            transform: translateY(-14px) rotate(-6deg) scale(1.06);
-            box-shadow: 0 26px 48px rgba(0,255,136,0.12);
-        }
-
-        .card-face {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            height: 100%;
-            border-radius: 16px;
-            background: linear-gradient(45deg, rgba(0,255,136,0.06), rgba(0,102,255,0.04));
-            font-size: 2.4rem;
-        }
-
-        .contact-visual-text {
-            color: rgba(255,255,255,0.85);
-            text-align: center;
-            max-width: 420px;
-            opacity: 0.95;
-        }
         
+        
+        
+        
+        
+        
+        
+        
+        
+        
+
         /* Responsive */
         @media (max-width: 768px) {
             nav {
@@ -779,11 +674,25 @@
             
             .about-content,
             .contact-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr; align-items: center; justify-items: center;
                 gap: 2rem;
             }
             
-            .projects-grid {
+            .projects-category {
+            margin-top: 4rem;
+        }
+        
+        .category-title {
+            font-family: 'Orbitron', monospace;
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            padding-bottom: 1rem;
+        }
+        
+        .projects-grid {
                 grid-template-columns: 1fr;
             }
             
@@ -842,10 +751,7 @@
     <div class="loader" id="loader">
         <div class="loader-text">INITIALIZING...</div>
     </div>
-    
-    <!-- Custom Cursor -->
-    <div class="custom-cursor" id="cursor"></div>
-    
+
     <!-- Particle Background -->
     <div class="particles" id="particles"></div>
     
@@ -1026,106 +932,211 @@
     <section id="projects" class="projects fade-in">
         <div class="container">
             <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Flutter Water Ordering App</h3>
-                        <p class="project-description">A mobile application built with Flutter that allows users to order water from local suppliers easily. The app features real-time tracking, secure payments, and a user-friendly interface.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Firebase</span>
+            <!-- Artificial Intelligence -->
+            <div class="projects-category">
+                <h3 class="category-title">Artificial Intelligence</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>ChatPDF</h3>
+                            <p class="project-description">A web application that allows users to chat with a PDF document, extracting information and answering questions based on the document's content.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Streamlit</span>
+                                <span class="tech-tag">LangChain</span>
+                                <span class="tech-tag">REST API</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/chatpdf" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
                         </div>
-                        <a href="https://github.com/MohammadMohid03/flutter-water-ordering-app" class="github-btn" target="_blank">
-                            <span>🔗</span> View on GitHub
-                        </a>
                     </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>ChatPDF</h3>
-                        <p class="project-description">A web application that allows users to chat with a PDF document, extracting information and answering questions based on the document's content.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Python</span>
-                            <span class="tech-tag">Streamlit</span>
-                            <span class="tech-tag">LangChain</span>
-                            <span class="tech-tag">REST API</span>
+
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>AI-Powered StudyBuddy</h3>
+                            <p class="project-description">A smart learning companion mobile app that helps students study more effectively. Upload PDFs and let AI automatically generate notes, flashcards, and quizzes. Features an AI tutor for personalized assistance and progress tracking to monitor your learning journey. Built with React Native and MongoDB Atlas.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">MongoDB Atlas</span>
+                                <span class="tech-tag">RESTful API</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/study_buddy_app" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
                         </div>
-                        <a href="https://github.com/MohammadMohid03/chatpdf" class="github-btn" target="_blank">
-                            <span>🔗</span> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Caffein</h3>
-                        <p class="project-description">Caffein keep track of your coffee with Caffein app with React.js FantaCSS & Firebase.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">FantaCSS</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">React.js</span>
-                        </div>
-                        <a href="https://github.com/mohidasmat/caffein" class="github-btn" target="_blank">
-                            <span>🔗</span> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>Budget Tracker App</h3>
-                        <p class="project-description">A feature-rich, cross-platform budget tracking application built with Flutter and Firebase. The app focuses on a fluid, visually engaging user experience with glassmorphism, custom animations, and interactive charts. It features secure Firebase authentication, real-time expense tracking, and a proactive monthly budgeting system to help users take control of their finances.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Flutter</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">Dart</span>
-                            <span class="tech-tag">Swift</span>
-                        </div>
-                        <a href="https://github.com/MohammadMohid03/Budget_tracker_flutter" class="github-btn" target="_blank">
-                            <span>🔗</span> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>AI-Powered StudyBuddy</h3>
-                        <p class="project-description">A smart learning companion mobile app that helps students study more effectively. Upload PDFs and let AI automatically generate notes, flashcards, and quizzes. Features an AI tutor for personalized assistance and progress tracking to monitor your learning journey. Built with React Native and MongoDB Atlas.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">MongoDB Atlas</span>
-                            <span class="tech-tag">RESTful API</span>
-                        </div>
-                        <a href="https://github.com/MohammadMohid03/study_buddy_app" class="github-btn" target="_blank">
-                            <span>🔗</span> View on GitHub
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-image"></div>
-                    <div class="project-content">
-                        <h3>FinTrack</h3>
-                        <p class="project-description">Full-stack React Native (TypeScript) mobile app with Firebase authentication, real-time market data integration (CoinGecko/Finnhub APIs), Google Gemini AI assistant, Expo push notifications via Cloudflare Workers, and automated APK deployment using GitHub Actions. Features responsive charts, background price monitoring, and cross-platform compatibility.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">React Native</span>
-                            <span class="tech-tag">Firebase</span>
-                            <span class="tech-tag">RESTful API</span>
-                        </div>
-                        <a href="https://github.com/MohammadMohid03/fintrack" class="github-btn" target="_blank">
-                            <span>🔗</span> View on GitHub
-                        </a>
                     </div>
                 </div>
             </div>
+
+            
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>AI Dr Assistant</h3>
+                            <p class="project-description">An AI-powered assistant designed for medical professionals. Helps with diagnosis suggestions, analyzing patient records, and medical research.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Artificial Intelligence</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">LLM</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/AI-Dr-Assistant" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            <!-- App Development -->
+            <div class="projects-category">
+                <h3 class="category-title">App Development</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>Flutter Water Ordering App</h3>
+                            <p class="project-description">A mobile application built with Flutter that allows users to order water from local suppliers easily. The app features real-time tracking, secure payments, and a user-friendly interface.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Dart</span>
+                                <span class="tech-tag">Firebase</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/flutter-water-ordering-app" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>Budget Tracker App</h3>
+                            <p class="project-description">A feature-rich, cross-platform budget tracking application built with Flutter and Firebase. The app focuses on a fluid, visually engaging user experience with glassmorphism, custom animations, and interactive charts. It features secure Firebase authentication, real-time expense tracking, and a proactive monthly budgeting system to help users take control of their finances.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Flutter</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">Dart</span>
+                                <span class="tech-tag">Swift</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/Budget_tracker_flutter" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>FinTrack</h3>
+                            <p class="project-description">Full-stack React Native (TypeScript) mobile app with Firebase authentication, real-time market data integration (CoinGecko/Finnhub APIs), Google Gemini AI assistant, Expo push notifications via Cloudflare Workers, and automated APK deployment using GitHub Actions. Features responsive charts, background price monitoring, and cross-platform compatibility.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React Native</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">RESTful API</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/fintrack" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+
+            <!-- Tools & Data -->
+            <div class="projects-category">
+                <h3 class="category-title">Tools & Data Pipelines</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>Data Quality Monitoring</h3>
+                            <p class="project-description">A robust tool to monitor data quality across databases. Features automated checks for nulls, duplicates, and anomalies with detailed alerting and reporting capabilities.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Data Engineering</span>
+                                <span class="tech-tag">SQL</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/Data-Quality-Monitoring-tool" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>Stock Market ETL Pipeline</h3>
+                            <p class="project-description">An automated End-to-End ETL pipeline that extracts stock market data, transforms it for analysis, and loads it into a data warehouse for business intelligence.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">ETL</span>
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Data Analytics</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/Stock-Market-ETL-Pipeline" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>Cross-Platform OS Utility</h3>
+                            <p class="project-description">A versatile utility tool designed to work seamlessly across different operating systems. Provides system diagnostics, file management, and performance tweaks.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">System Tool</span>
+                                <span class="tech-tag">Automation</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/Cross-platform-OS-Utility-Tool" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development -->
+            <div class="projects-category">
+                <h3 class="category-title">Web Development</h3>
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>Caffein</h3>
+                            <p class="project-description">Caffein keep track of your coffee with Caffein app with React.js FantaCSS & Firebase.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">FantaCSS</span>
+                                <span class="tech-tag">Firebase</span>
+                                <span class="tech-tag">React.js</span>
+                            </div>
+                            <a href="https://github.com/mohidasmat/caffein" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-visual"></div>
+                        <div class="project-content">
+                            <h3>CodeNexus</h3>
+                            <p class="project-description">A community platform for developers. Includes features for sharing code snippets, asking questions, and collaborating on projects.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Web Development</span>
+                                <span class="tech-tag">Full-Stack</span>
+                            </div>
+                            <a href="https://github.com/MohammadMohid03/codenexus" class="github-btn" target="_blank">
+                                <span>🔗</span> View on GitHub
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     
@@ -1168,21 +1179,7 @@
                     </div>
                 </div>
                 
-                <div class="contact-visual">
-                    <div class="animation-cards">
-                        <div class="anim-card" tabindex="0">
-                            <div class="card-face">🚀</div>
-                        </div>
-                        <div class="anim-card" tabindex="0">
-                            <div class="card-face">✨</div>
-                        </div>
-                        <div class="anim-card" tabindex="0">
-                            <div class="card-face">🔗</div>
-                        </div>
-                    </div>
-                    <p class="contact-visual-text">I'm open to collaborations and new projects — feel free to connect on LinkedIn or explore my work on GitHub.</p>
                 </div>
-            </div>
         </div>
     </section>
 
@@ -1194,43 +1191,10 @@
             }, 2000);
         });
 
-        // Custom Cursor
-        const cursor = document.getElementById('cursor');
-        const trails = [];
-        const trailLength = 5;
-
-        // Create cursor trails
-        for (let i = 0; i < trailLength; i++) {
-            const trail = document.createElement('div');
-            trail.className = 'cursor-trail';
-            document.body.appendChild(trail);
-            trails.push({
-                element: trail,
-                x: 0,
-                y: 0
-            });
-        }
-
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            // Update trails with delay
-            trails.forEach((trail, index) => {
-                setTimeout(() => {
-                    trail.x = e.clientX;
-                    trail.y = e.clientY;
-                    trail.element.style.left = trail.x + 'px';
-                    trail.element.style.top = trail.y + 'px';
-                    trail.element.style.opacity = (trailLength - index) / trailLength * 0.5;
-                }, index * 50);
-            });
-        });
-
         // Particle System
         function createParticles() {
             const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
+            const particleCount = 15;
 
             for (let i = 0; i < particleCount; i++) {
                 const particle = document.createElement('div');
@@ -1357,7 +1321,7 @@
             const mouseY = e.clientY / window.innerHeight;
             
             document.querySelector('.hero').style.background = 
-                `radial-gradient(ellipse at ${mouseX * 100}% ${mouseY * 100}%, rgba(0, 102, 255, 0.15) 0%, var(--dark) 50%)`;
+                `radial-gradient(ellipse at ${mouseX * 100}% ${mouseY * 100}%, rgba(2, 132, 199, 0.12) 0%, var(--dark) 50%)`;
         });
 
         // Typing Effect for Hero
