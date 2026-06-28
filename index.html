@@ -3,10 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohammad Mohid — App Developer & AI Engineer</title>
-    <meta name="description" content="Mohammad Mohid's professional portfolio. CS Student, App Developer, and AI/ML Engineer from Islamabad. Building intelligent mobile experiences.">
-    <meta name="keywords" content="Mohammad Mohid, App Developer, AI Engineer, Flutter, React Native, Portfolio">
+    <title>Mohammad Mohid | Mohid's Portfolio — App Developer & AI Engineer</title>
+    <meta name="description" content="Welcome to Mohid's Portfolio. Mohammad Mohid is an App Developer and AI Engineer in Islamabad, Pakistan, specializing in Flutter, Rust, .NET, and AI/ML integrations.">
+    <meta name="keywords" content="Mohammad Mohid, Mohid's Portfolio, Mohid Portfolio, App Developer, AI Engineer, Flutter, Rust, .NET, Islamabad, Portfolio">
     <meta name="author" content="Mohammad Mohid">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://portfolio-mohammad-mohid-03.vercel.app/">
+    <meta property="og:title" content="Mohammad Mohid | Mohid's Portfolio — App Developer & AI Engineer">
+    <meta property="og:description" content="Welcome to Mohid's Portfolio. Discover mobile apps, backend solutions, and AI automation built by Mohammad Mohid.">
+    <meta property="og:image" content="https://avatars.githubusercontent.com/u/171975304?v=4">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://portfolio-mohammad-mohid-03.vercel.app/">
+    <meta property="twitter:title" content="Mohammad Mohid | Mohid's Portfolio — App Developer & AI Engineer">
+    <meta property="twitter:description" content="Welcome to Mohid's Portfolio. Discover mobile apps, backend solutions, and AI automation built by Mohammad Mohid.">
+    <meta property="twitter:image" content="https://avatars.githubusercontent.com/u/171975304?v=4">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://portfolio-mohammad-mohid-03.vercel.app/">
+
+    <!-- Structured Data / JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Mohammad Mohid",
+      "alternateName": ["Mohid", "Mohid's Portfolio", "Mohammad Mohid Portfolio"],
+      "url": "https://portfolio-mohammad-mohid-03.vercel.app/",
+      "image": "https://avatars.githubusercontent.com/u/171975304?v=4",
+      "sameAs": [
+        "https://github.com/MohammadMohid03",
+        "https://www.linkedin.com/in/mohammadmohid03/"
+      ],
+      "jobTitle": "App Developer & AI Engineer",
+      "description": "Welcome to Mohid's Portfolio. Mohammad Mohid is an App Developer and AI Engineer specializing in Flutter, Rust, .NET, and AI/ML integrations.",
+      "knowsAbout": [
+        "App Development",
+        "Artificial Intelligence",
+        "Flutter",
+        "React Native",
+        "Rust",
+        "Tauri",
+        ".NET",
+        "SQL Server",
+        "AWS"
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Islamabad",
+        "addressCountry": "Pakistan"
+      }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -1086,7 +1138,7 @@
                 Hi, I'm <span>Mohammad Mohid</span>
             </h1>
             <p class="hero__subtitle">
-                CS Student &amp; App Developer crafting intelligent mobile experiences with AI/ML. Bridging the gap between mobile experiences and intelligent algorithms.
+                Welcome to <strong>Mohid's Portfolio</strong>. I'm a Computer Science Student &amp; App Developer crafting intelligent mobile experiences with AI/ML. Bridging the gap between mobile experiences and intelligent algorithms.
             </p>
             <div class="hero__actions">
                 <a href="#projects" class="btn btn--primary">
@@ -1115,7 +1167,7 @@
             </div>
             <div class="about__grid">
                 <div class="about__text reveal">
-                    <p>I'm a passionate app developer and Computer Science student from Islamabad with a deep curiosity for creating digital experiences that push boundaries. I specialize in mobile app development and AI automation.</p>
+                    <p>Welcome to <strong>Mohid's Portfolio</strong>. I'm <strong>Mohammad Mohid</strong>, a passionate app developer and Computer Science student from Islamabad with a deep curiosity for creating digital experiences that push boundaries. I specialize in mobile app development, data pipelines, and AI automation.</p>
                     <p>Currently pursuing my CS degree, I work across the full stack — from crafting polished Flutter and React Native interfaces to building intelligent backends with Python, Node.js, and cloud services. My projects span AI-powered apps, fintech platforms, and data engineering pipelines.</p>
                     <p>I believe in building software that doesn't just work — it delights. Every project is an opportunity to solve real problems with elegant, well-architected code.</p>
                 </div>
@@ -1327,7 +1379,7 @@
                 <div class="contact__visual reveal reveal-delay-2">
                     <div class="contact__visual__content">
                         <img src="https://avatars.githubusercontent.com/u/171975304?v=4"
-                             alt="Mohammad Mohid"
+                             alt="Mohammad Mohid - Mohid's Portfolio App Developer & AI Engineer"
                              class="contact__visual__avatar"
                              loading="lazy">
                         <h3 class="contact__visual__name">Mohammad Mohid</h3>
@@ -1496,6 +1548,13 @@
             // Scroll effect
             window.addEventListener('scroll', () => {
                 nav.classList.toggle('scrolled', window.scrollY > 60);
+
+                // Highlight last section if scrolled to the absolute bottom of page
+                if ((window.innerHeight + window.scrollY) >= (document.documentElement.scrollHeight - 25)) {
+                    links.forEach(l => l.classList.remove('active'));
+                    const contactLink = document.querySelector('.nav__link[data-section="contact"]');
+                    if (contactLink) contactLink.classList.add('active');
+                }
             }, { passive: true });
 
             // Mobile toggle
@@ -1504,17 +1563,20 @@
                 list.classList.toggle('open');
             });
 
-            // Active link on scroll
+            // Active link on scroll (IntersectionObserver with offset margin)
             const sections = document.querySelectorAll('section[id]');
             const observer = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        links.forEach(l => l.classList.remove('active'));
-                        const activeLink = document.querySelector(`.nav__link[data-section="${entry.target.id}"]`);
-                        if (activeLink) activeLink.classList.add('active');
+                        // Check if we are already at the very bottom (to prevent overriding contact highlight)
+                        if ((window.innerHeight + window.scrollY) < (document.documentElement.scrollHeight - 25)) {
+                            links.forEach(l => l.classList.remove('active'));
+                            const activeLink = document.querySelector(`.nav__link[data-section="${entry.target.id}"]`);
+                            if (activeLink) activeLink.classList.add('active');
+                        }
                     }
                 });
-            }, { threshold: 0.3, rootMargin: '-80px 0px 0px 0px' });
+            }, { threshold: 0, rootMargin: '-25% 0px -70% 0px' });
 
             sections.forEach(s => observer.observe(s));
 
